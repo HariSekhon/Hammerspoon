@@ -92,7 +92,7 @@ ln -svFhw ~/github/hammerspoon ~/.hammerspoon
 Output:
 
 ```text
-/Users/hari/.hammerspoon/hammerspoon -> /Users/hari/github/hammerspoon
+/Users/hari/.hammerspoon -> /Users/hari/github/hammerspoon
 ```
 
 ### Run Hammerspoon
