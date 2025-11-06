@@ -16,7 +16,7 @@
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 
 [![Lua](https://img.shields.io/badge/Lua-5-000080?logo=lua&logoColor=white)](#readme)
-[![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
+[![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](#readme)
 
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
 [![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2Fhammerspoon?branchName=main)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=16&branchName=main)
