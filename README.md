@@ -22,7 +22,7 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 
 <!-- TODO: Replace Azure DevOps Pipeline ID here -->
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
-[![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2Fhammerspoon?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=15&branchName=master)
+[![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2Fhammerspoon?branchName=main)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=16&branchName=main)
 [![GitLab Pipeline](https://img.shields.io/badge/GitLab%20CI-legacy-lightgrey?logo=gitlab)](https://gitlab.com/HariSekhon/hammerspoon/pipelines)
 [![BitBucket Pipeline](https://img.shields.io/badge/Bitbucket%20CI-legacy-lightgrey?logo=bitbucket)](https://bitbucket.org/HariSekhon/hammerspoon/addon/pipelines/home#!/)
 
