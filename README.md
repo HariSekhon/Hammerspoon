@@ -40,6 +40,8 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 [![SonarCloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml)
 [![Trivy](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml)
 
+## Summary
+
 Mac event driven automation using Hammerspoon.
 
 Hammerspoon is a system event handler for Mac.
