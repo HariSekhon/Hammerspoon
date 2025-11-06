@@ -1,4 +1,4 @@
-# Hari Sekhon - Hammerspoon
+# Hari Sekhon - Hammerspoon Mac Event-Driven Automation Code
 
 [![GitHub stars](https://img.shields.io/github/stars/HariSekhon/hammerspoon?logo=github)](https://github.com/HariSekhon/hammerspoon/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/HariSekhon/hammerspoon?logo=github)](https://github.com/HariSekhon/hammerspoon/network)
