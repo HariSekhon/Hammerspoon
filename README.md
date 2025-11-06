@@ -47,7 +47,7 @@
     - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
     - [Allow Desktop Notifications](#allow-desktop-notifications)
 - [Automation Code](#automation-code)
-  - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-headphones)
+  - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-airpods)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
 
 <!-- INDEX_END -->
