@@ -133,7 +133,7 @@ to be able to Shazam songs while watching a movie or TV show on AirPods.
 You will need to install the Blackhole audio driver and set up a Midi Multi-Output Audio device too.
 
 See
-[HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#automatically-switch-to-using-multi-output-device-when-connecting-headphones)
+[HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#shazam-songs-while-using-headphones-on-mac)
 page section for more details.
 
 ### Auto-run Speed Test when connecting to a Wifi network
