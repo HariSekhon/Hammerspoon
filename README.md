@@ -73,6 +73,28 @@ Output:
 /Users/hari/.hammerspoon/hammerspoon -> /Users/hari/github/hammerspoon
 ```
 
+Finally, start Hammerspoon, you should see its icon in the menu bar.
+
+```shell
+open -a Hammerspoon
+```
+
+Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferences UI) or just run this:
+
+```shell
+osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:false}'
+```
+
+Optionally allow pop-up desktop notifications from Hammerspoon
+so that your code can notify you when it's done something for you
+(I recommend Banners that automatically disappear without having to click them).
+
+`System Settings` -> `Notifications` ->`Hammerspoon`:
+
+```shell
+open "x-apple.systempreferences:com.apple.Notifications-Settings.extension?bundleId=org.hammerspoon.Hammerspoon"
+```
+
 ## Auto-switching to Multi-Output for Shazaming when connecting headphones
 
 Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
