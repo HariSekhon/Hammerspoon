@@ -1,21 +1,21 @@
-# Hari Sekhon - Template Repo
+# Hari Sekhon - hammerspoon
 
-[![GitHub stars](https://img.shields.io/github/stars/HariSekhon/Template-Repo?logo=github)](https://github.com/HariSekhon/Template-Repo/stargazers)
-[![GitHub forks](https://img.shields.io/github/forks/HariSekhon/Template-Repo?logo=github)](https://github.com/HariSekhon/Template-Repo/network)
-[![LineCount](https://sloc.xyz/github/HariSekhon/Template-repo/?badge-bg-color=2081C2)](https://github.com/boyter/scc/)
-[![Cocomo](https://sloc.xyz/github/HariSekhon/Template-repo/?badge-bg-color=2081C2&category=cocomo)](https://github.com/boyter/scc/)
-[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/HariSekhon/Template-Repo/blob/master/LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/HariSekhon/hammerspoon?logo=github)](https://github.com/HariSekhon/hammerspoon/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/HariSekhon/hammerspoon?logo=github)](https://github.com/HariSekhon/hammerspoon/network)
+[![LineCount](https://sloc.xyz/github/HariSekhon/hammerspoon/?badge-bg-color=2081C2)](https://github.com/boyter/scc/)
+[![Cocomo](https://sloc.xyz/github/HariSekhon/hammerspoon/?badge-bg-color=2081C2&category=cocomo)](https://github.com/boyter/scc/)
+[![License](https://img.shields.io/badge/license-MIT-green)](https://github.com/HariSekhon/hammerspoon/blob/master/LICENSE)
 [![My LinkedIn](https://img.shields.io/badge/LinkedIn%20Profile-HariSekhon-blue?logo=data:image/svg%2bxml;base64,PHN2ZyByb2xlPSJpbWciIGZpbGw9IiNmZmZmZmYiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48dGl0bGU+TGlua2VkSW48L3RpdGxlPjxwYXRoIGQ9Ik0yMC40NDcgMjAuNDUyaC0zLjU1NHYtNS41NjljMC0xLjMyOC0uMDI3LTMuMDM3LTEuODUyLTMuMDM3LTEuODUzIDAtMi4xMzYgMS40NDUtMi4xMzYgMi45Mzl2NS42NjdIOS4zNTFWOWgzLjQxNHYxLjU2MWguMDQ2Yy40NzctLjkgMS42MzctMS44NSAzLjM3LTEuODUgMy42MDEgMCA0LjI2NyAyLjM3IDQuMjY3IDUuNDU1djYuMjg2ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPjwvc3ZnPgo=)](https://www.linkedin.com/in/HariSekhon/)
-[![GitHub Last Commit](https://img.shields.io/github/last-commit/HariSekhon/Template-Repo?logo=github)](https://github.com/HariSekhon/Template-Repo/commits/master)
+[![GitHub Last Commit](https://img.shields.io/github/last-commit/HariSekhon/hammerspoon?logo=github)](https://github.com/HariSekhon/hammerspoon/commits/master)
 
 TODO: update Codacy grade link below - it's a hash so cannot be predicted to replace via `./customize.sh`
 
-[![Codacy](https://app.codacy.com/project/badge/Grade/abce2438224948fd93d462cd6aba3aaf)](https://www.codacy.com/gh/HariSekhon/Template-Repo/dashboard)
-[![CodeFactor](https://www.codefactor.io/repository/github/harisekhon/Template-Repo/badge)](https://www.codefactor.io/repository/github/harisekhon/Template-Repo)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Template-Repo&metric=alert_status)](https://sonarcloud.io/dashboard?id=HariSekhon_Template-Repo)
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Template-Repo&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Template-Repo)
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Template-Repo&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Template-Repo)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Template-Repo&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Template-Repo)
+[![Codacy](https://app.codacy.com/project/badge/Grade/abce2438224948fd93d462cd6aba3aaf)](https://www.codacy.com/gh/HariSekhon/hammerspoon/dashboard)
+[![CodeFactor](https://www.codefactor.io/repository/github/harisekhon/hammerspoon/badge)](https://www.codefactor.io/repository/github/harisekhon/hammerspoon)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=alert_status)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 
 [![Python](https://img.shields.io/badge/Python-3-blue?logo=python&logoColor=white)](#readme)
 [![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
@@ -32,29 +32,40 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 
 <!-- TODO: Replace Azure DevOps Pipeline ID here -->
 [![CI Builds Overview](https://img.shields.io/badge/CI%20Builds-Overview%20Page-blue?logo=circleci)](https://harisekhon.github.io/CI-CD/)
-[![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2FTemplate-Repo?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=15&branchName=master)
-[![GitLab Pipeline](https://img.shields.io/badge/GitLab%20CI-legacy-lightgrey?logo=gitlab)](https://gitlab.com/HariSekhon/Template-Repo/pipelines)
-[![BitBucket Pipeline](https://img.shields.io/badge/Bitbucket%20CI-legacy-lightgrey?logo=bitbucket)](https://bitbucket.org/HariSekhon/Template-Repo/addon/pipelines/home#!/)
+[![Azure DevOps Pipeline](https://dev.azure.com/harisekhon/GitHub/_apis/build/status%2Fhammerspoon?branchName=master)](https://dev.azure.com/harisekhon/GitHub/_build/latest?definitionId=15&branchName=master)
+[![GitLab Pipeline](https://img.shields.io/badge/GitLab%20CI-legacy-lightgrey?logo=gitlab)](https://gitlab.com/HariSekhon/hammerspoon/pipelines)
+[![BitBucket Pipeline](https://img.shields.io/badge/Bitbucket%20CI-legacy-lightgrey?logo=bitbucket)](https://bitbucket.org/HariSekhon/hammerspoon/addon/pipelines/home#!/)
 
-[![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-2088FF?logo=github)](https://github.com/HariSekhon/Template-Repo)
-[![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-FCA121?logo=gitlab)](https://gitlab.com/HariSekhon/Template-Repo)
-[![Repo on Azure DevOps](https://img.shields.io/badge/repo-Azure%20DevOps-0078D7?logo=azure%20devops)](https://dev.azure.com/HariSekhon/GitHub/_git/Template-Repo)
-[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-0052CC?logo=bitbucket)](https://bitbucket.org/HariSekhon/Template-Repo)
+[![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-2088FF?logo=github)](https://github.com/HariSekhon/hammerspoon)
+[![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-FCA121?logo=gitlab)](https://gitlab.com/HariSekhon/hammerspoon)
+[![Repo on Azure DevOps](https://img.shields.io/badge/repo-Azure%20DevOps-0078D7?logo=azure%20devops)](https://dev.azure.com/HariSekhon/GitHub/_git/hammerspoon)
+[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-0052CC?logo=bitbucket)](https://bitbucket.org/HariSekhon/hammerspoon)
 
-[![Markdown](https://github.com/HariSekhon/Template-Repo/actions/workflows/markdown.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/markdown.yaml)
-[![Validation](https://github.com/HariSekhon/Template-Repo/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/validate.yaml)
-[![Kics](https://github.com/HariSekhon/Template-Repo/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/kics.yaml)
-[![Grype](https://github.com/HariSekhon/Template-Repo/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/grype.yaml)
-[![Semgrep](https://github.com/HariSekhon/Template-Repo/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/semgrep.yaml)
-[![Semgrep Cloud](https://github.com/HariSekhon/Template-Repo/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/semgrep-cloud.yaml)
-[![SonarCloud](https://github.com/HariSekhon/Template-Repo/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/sonarcloud.yaml)
-[![Trivy](https://github.com/HariSekhon/Template-Repo/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/trivy.yaml)
+[![Markdown](https://github.com/HariSekhon/hammerspoon/actions/workflows/markdown.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/markdown.yaml)
+[![Validation](https://github.com/HariSekhon/hammerspoon/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/validate.yaml)
+[![Kics](https://github.com/HariSekhon/hammerspoon/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/kics.yaml)
+[![Grype](https://github.com/HariSekhon/hammerspoon/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/grype.yaml)
+[![Semgrep](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep.yaml)
+[![Semgrep Cloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep-cloud.yaml)
+[![SonarCloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml)
+[![Trivy](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml)
 
 Mac event driven automation using Hammerspoon.
+
+Hammerspoon is a system event handler for Mac.
+
+The code is written in Lua.
 
 Includes:
 
 ## Auto-switching to Multi-Output for Shazaming when connecting headphones
+
+Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
+to be able to Shazam songs while watching a movie or TV show on AirPods.
+
+See
+[HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#automatically-switch-to-using-multi-output-device-when-connecting-headphones)
+page section for more details.
 
 ## Automatically running Speed Test when connecting to a wifi network
 
@@ -128,7 +139,7 @@ Does nothing:
 ### Templates
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=Templates&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/Templates)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=Template-repo&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/Template-repo)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=hammerspoon&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/hammerspoon)
 
 ### Misc
 
