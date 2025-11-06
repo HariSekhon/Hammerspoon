@@ -50,6 +50,9 @@ The code is written in Lua.
 
 Includes:
 
+- [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
+- [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
+
 ## Auto-switching to Multi-Output for Shazaming when connecting headphones
 
 Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
