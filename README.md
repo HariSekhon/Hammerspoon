@@ -15,6 +15,7 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 
+[![Hammerspoon](https://img.shields.io/badge/Hammer-spoon-blue?logo=hammerspoon&logoColor=white)](#readme)
 [![Lua](https://img.shields.io/badge/Lua-5-000080?logo=lua&logoColor=white)](#readme)
 [![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](#readme)
 
@@ -23,29 +24,29 @@
 [![GitLab Pipeline](https://img.shields.io/badge/GitLab%20CI-legacy-lightgrey?logo=gitlab)](https://gitlab.com/HariSekhon/hammerspoon/pipelines)
 [![BitBucket Pipeline](https://img.shields.io/badge/Bitbucket%20CI-legacy-lightgrey?logo=bitbucket)](https://bitbucket.org/HariSekhon/hammerspoon/addon/pipelines/home#!/)
 
-[![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-2088FF?logo=github)](https://github.com/HariSekhon/hammerspoon)
-[![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-FCA121?logo=gitlab)](https://gitlab.com/HariSekhon/hammerspoon)
-[![Repo on Azure DevOps](https://img.shields.io/badge/repo-Azure%20DevOps-0078D7?logo=azure%20devops)](https://dev.azure.com/HariSekhon/GitHub/_git/hammerspoon)
-[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-0052CC?logo=bitbucket)](https://bitbucket.org/HariSekhon/hammerspoon)
+[![Repo on GitHub](https://img.shields.io/badge/repo-GitHub-2088FF?logo=github)](https://github.com/HariSekhon/Hammerspoon)
+[![Repo on GitLab](https://img.shields.io/badge/repo-GitLab-FCA121?logo=gitlab)](https://gitlab.com/HariSekhon/Hammerspoon)
+[![Repo on Azure DevOps](https://img.shields.io/badge/repo-Azure%20DevOps-0078D7?logo=azure%20devops)](https://dev.azure.com/HariSekhon/GitHub/_git/Hammerspoon)
+[![Repo on BitBucket](https://img.shields.io/badge/repo-BitBucket-0052CC?logo=bitbucket)](https://bitbucket.org/HariSekhon/Hammerspoon)
 
-[![Markdown](https://github.com/HariSekhon/hammerspoon/actions/workflows/markdown.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/markdown.yaml)
-[![Validation](https://github.com/HariSekhon/hammerspoon/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/validate.yaml)
-[![Kics](https://github.com/HariSekhon/hammerspoon/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/kics.yaml)
-[![Grype](https://github.com/HariSekhon/hammerspoon/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/grype.yaml)
-[![Semgrep](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep.yaml)
-[![Semgrep Cloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/semgrep-cloud.yaml)
-[![SonarCloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml)
-[![Trivy](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml)
+[![Markdown](https://github.com/HariSekhon/Hammerspoon/actions/workflows/markdown.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/markdown.yaml)
+[![Validation](https://github.com/HariSekhon/Hammerspoon/actions/workflows/validate.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/validate.yaml)
+[![Kics](https://github.com/HariSekhon/Hammerspoon/actions/workflows/kics.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/kics.yaml)
+[![Grype](https://github.com/HariSekhon/Hammerspoon/actions/workflows/grype.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/grype.yaml)
+[![Semgrep](https://github.com/HariSekhon/Hammerspoon/actions/workflows/semgrep.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/semgrep.yaml)
+[![Semgrep Cloud](https://github.com/HariSekhon/Hammerspoon/actions/workflows/semgrep-cloud.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/semgrep-cloud.yaml)
+[![SonarCloud](https://github.com/HariSekhon/Hammerspoon/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/sonarcloud.yaml)
+[![Trivy](https://github.com/HariSekhon/Hammerspoon/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/Hammerspoon/actions/workflows/trivy.yaml)
 
 <!-- INDEX_START -->
 
 - [Summary](#summary)
 - [Setup](#setup)
-  - [Install Hammerspoon using Homebrew](#install-hammerspoon-using-homebrew)
+  - [Install Hammerspoon](#install-hammerspoon)
   - [Add Hammerspoon Code](#add-hammerspoon-code)
   - [Run Hammerspoon](#run-hammerspoon)
-  - [Auto-Start Hammerspoon At Login](#auto-start-hammerspoon-at-login)
-  - [Allow Hammerspoon Desktop Notifications](#allow-hammerspoon-desktop-notifications)
+  - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
+  - [Allow Desktop Notifications](#allow-desktop-notifications)
 - [Automation Code](#automation-code)
   - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-headphones)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
@@ -67,7 +68,9 @@ Includes:
 
 ## Setup
 
-### Install Hammerspoon using Homebrew
+### Install Hammerspoon
+
+Install Hammerspoon using Homebrew:
 
 ```shell
 brew install hammerspoon --cask
@@ -101,7 +104,7 @@ Finally, start Hammerspoon, you should see its icon in the menu bar.
 open -a Hammerspoon
 ```
 
-### Auto-Start Hammerspoon At Login
+### Auto-Start Hammerspoon
 
 Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferences UI) or just run this:
 
@@ -109,7 +112,7 @@ Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferen
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:false}'
 ```
 
-### Allow Hammerspoon Desktop Notifications
+### Allow Desktop Notifications
 
 Optionally allow pop-up desktop notifications from Hammerspoon
 so that your code can notify you when it's done something for you
