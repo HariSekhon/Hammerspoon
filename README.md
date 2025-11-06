@@ -40,6 +40,29 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 [![SonarCloud](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/sonarcloud.yaml)
 [![Trivy](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/hammerspoon/actions/workflows/trivy.yaml)
 
+<!-- INDEX_START -->
+
+- [Summary](#summary)
+- [Setup](#setup)
+  - [Install Hammerspoon using Homebrew](#install-hammerspoon-using-homebrew)
+  - [Add Hammerspoon Code](#add-hammerspoon-code)
+  - [Run Hammerspoon](#run-hammerspoon)
+  - [Auto-Start Hammerspoon At Login](#auto-start-hammerspoon-at-login)
+  - [Allow Hammerspoon Desktop Notifications](#allow-hammerspoon-desktop-notifications)
+- [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
+- [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
+- [More Core Repos](#more-core-repos)
+  - [Knowledge](#knowledge)
+  - [DevOps Code](#devops-code)
+  - [Containerization](#containerization)
+  - [CI/CD](#cicd)
+  - [DBA - SQL](#dba---sql)
+  - [DevOps Reloaded](#devops-reloaded)
+  - [Templates](#templates)
+  - [Misc](#misc)
+
+<!-- INDEX_END -->
+
 ## Summary
 
 Mac event driven automation using Hammerspoon.
@@ -54,6 +77,14 @@ Includes:
 - [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
 
 ## Setup
+
+### Install Hammerspoon using Homebrew
+
+```shell
+brew install hammerspoon --cask
+```
+
+### Add Hammerspoon Code
 
 ```shell
 mkdir -p -v ~/github
@@ -73,17 +104,23 @@ Output:
 /Users/hari/.hammerspoon/hammerspoon -> /Users/hari/github/hammerspoon
 ```
 
+### Run Hammerspoon
+
 Finally, start Hammerspoon, you should see its icon in the menu bar.
 
 ```shell
 open -a Hammerspoon
 ```
 
+### Auto-Start Hammerspoon At Login
+
 Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferences UI) or just run this:
 
 ```shell
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:false}'
 ```
+
+### Allow Hammerspoon Desktop Notifications
 
 Optionally allow pop-up desktop notifications from Hammerspoon
 so that your code can notify you when it's done something for you
@@ -108,7 +145,7 @@ page section for more details.
 
 TODO + refactor
 
-#### Ensure to update Codacy Grade link manually after adding this repo to Codacy since the link is a hash and therefore cannot be predicted for replacement by `./customize.sh`.
+**Ensure to update Codacy Grade link manually after adding this repo to Codacy since the link is a hash and therefore cannot be predicted for replacement by `./customize.sh`**
 
 ## More Core Repos
 
