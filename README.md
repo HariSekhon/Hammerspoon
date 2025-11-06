@@ -198,7 +198,7 @@ Does nothing:
 ### Templates
 
 [![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=Templates&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/Templates)
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=hammerspoon&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/hammerspoon)
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=HariSekhon&repo=Template-repo&theme=ambient_gradient&description_lines_count=3)](https://github.com/HariSekhon/Template-repo)
 
 ### Misc
 
