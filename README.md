@@ -52,15 +52,6 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 - [Automation Code](#automation-code)
   - [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
   - [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
-- [More Core Repos](#more-core-repos)
-  - [Knowledge](#knowledge)
-  - [DevOps Code](#devops-code)
-  - [Containerization](#containerization)
-  - [CI/CD](#cicd)
-  - [DBA - SQL](#dba---sql)
-  - [DevOps Reloaded](#devops-reloaded)
-  - [Templates](#templates)
-  - [Misc](#misc)
 
 <!-- INDEX_END -->
 
