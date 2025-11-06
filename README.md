@@ -10,7 +10,7 @@
 
 TODO: update Codacy grade link below - it's a hash so cannot be predicted to replace via `./customize.sh`
 
-[![Codacy](https://app.codacy.com/project/badge/Grade/abce2438224948fd93d462cd6aba3aaf)](https://www.codacy.com/gh/HariSekhon/hammerspoon/dashboard)
+[![Codacy](https://app.codacy.com/project/badge/Grade/77e2182854f24d6fbbc64dcc1edcfc84)](https://app.codacy.com/gh/HariSekhon/Hammerspoon/dashboard)
 [![CodeFactor](https://www.codefactor.io/repository/github/harisekhon/hammerspoon/badge)](https://www.codefactor.io/repository/github/harisekhon/hammerspoon)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=alert_status)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
