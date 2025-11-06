@@ -138,8 +138,6 @@ page section for more details.
 
 TODO + refactor
 
-**Ensure to update Codacy Grade link manually after adding this repo to Codacy since the link is a hash and therefore cannot be predicted for replacement by `./customize.sh`**
-
 ## More Core Repos
 
 <!-- OTHER_REPOS_START -->
