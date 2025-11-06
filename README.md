@@ -125,16 +125,22 @@ open "x-apple.systempreferences:com.apple.Notifications-Settings.extension?bundl
 
 ## Automation Code
 
-### Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on headphones
+### Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods
 
 Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
 to be able to Shazam songs while watching a movie or TV show on AirPods.
 
 You will need to install the Blackhole audio driver and set up a Midi Multi-Output Audio device too.
 
+If using headphones other than AirPods you can simply edit the matching line in the code:
+
+```lua
+if current:match("AirPods") then
+```
+
 See
 [HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#shazam-songs-while-using-headphones-on-mac)
-page section for more details.
+page section for more details on this setup.
 
 ### Auto-run Speed Test when connecting to a Wifi network
 
