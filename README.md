@@ -50,7 +50,13 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 [![SonarCloud](https://github.com/HariSekhon/Template-Repo/actions/workflows/sonarcloud.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/sonarcloud.yaml)
 [![Trivy](https://github.com/HariSekhon/Template-Repo/actions/workflows/trivy.yaml/badge.svg)](https://github.com/HariSekhon/Template-Repo/actions/workflows/trivy.yaml)
 
-## PUT CONTENT HERE
+Mac event driven automation using Hammerspoon.
+
+Includes:
+
+## Auto-switching to Multi-Output for Shazaming when connecting headphones
+
+## Automatically running Speed Test when connecting to a wifi network
 
 ### Customize Repo in 1 Command
 
