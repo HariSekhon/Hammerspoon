@@ -42,10 +42,10 @@
 - [Summary](#summary)
 - [Setup](#setup)
   - [Install Hammerspoon](#install-hammerspoon)
-  - [Add Hammerspoon Code](#add-hammerspoon-code)
+    - [Add Hammerspoon Code](#add-hammerspoon-code)
   - [Run Hammerspoon](#run-hammerspoon)
-  - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
-  - [Allow Desktop Notifications](#allow-desktop-notifications)
+    - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
+    - [Allow Desktop Notifications](#allow-desktop-notifications)
 - [Automation Code](#automation-code)
   - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-headphones)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
@@ -75,7 +75,7 @@ Install Hammerspoon using Homebrew:
 brew install hammerspoon --cask
 ```
 
-### Add Hammerspoon Code
+#### Add Hammerspoon Code
 
 ```shell
 mkdir -p -v ~/github
@@ -103,7 +103,7 @@ Finally, start Hammerspoon, you should see its icon in the menu bar.
 open -a Hammerspoon
 ```
 
-### Auto-Start Hammerspoon
+#### Auto-Start Hammerspoon
 
 Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferences UI) or just run this:
 
@@ -111,7 +111,7 @@ Set Hammerspoon to start at login (you can tick this in the Hammerspoon Preferen
 osascript -e 'tell application "System Events" to make login item at end with properties {path:"/Applications/Hammerspoon.app", hidden:false}'
 ```
 
-### Allow Desktop Notifications
+#### Allow Desktop Notifications
 
 Optionally allow pop-up desktop notifications from Hammerspoon
 so that your code can notify you when it's done something for you
