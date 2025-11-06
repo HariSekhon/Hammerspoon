@@ -15,7 +15,6 @@
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Hammerspoon&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Hammerspoon)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_Hammerspoon&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_Hammerspoon)
 
-[![Hammerspoon](https://img.shields.io/badge/Hammer-spoon-blue?logo=Hammerspoon&logoColor=white)](#readme)
 [![Lua](https://img.shields.io/badge/Lua-5-000080?logo=lua&logoColor=white)](#readme)
 [![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](#readme)
 
