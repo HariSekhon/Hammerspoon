@@ -53,6 +53,26 @@ Includes:
 - [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
 - [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
 
+## Setup
+
+```shell
+mkdir -p -v ~/github
+```
+
+```shell
+git clone https://github.com/HariSekhon/Hammerspoon ~/github/hammerspoon
+```
+
+```shell
+ln -svf ~/github/hammerspoon ~/.hammerspoon
+```
+
+Output:
+
+```text
+/Users/hari/.hammerspoon/hammerspoon -> /Users/hari/github/hammerspoon
+```
+
 ## Auto-switching to Multi-Output for Shazaming when connecting headphones
 
 Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
