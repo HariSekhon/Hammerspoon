@@ -49,8 +49,9 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
   - [Run Hammerspoon](#run-hammerspoon)
   - [Auto-Start Hammerspoon At Login](#auto-start-hammerspoon-at-login)
   - [Allow Hammerspoon Desktop Notifications](#allow-hammerspoon-desktop-notifications)
-- [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
-- [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
+- [Automation Code](#automation-code)
+  - [Auto-switching to Multi-Output for Shazaming when connecting headphones](#auto-switching-to-multi-output-for-shazaming-when-connecting-headphones)
+  - [Automatically running Speed Test when connecting to a wifi network](#automatically-running-speed-test-when-connecting-to-a-wifi-network)
 - [More Core Repos](#more-core-repos)
   - [Knowledge](#knowledge)
   - [DevOps Code](#devops-code)
@@ -132,7 +133,9 @@ so that your code can notify you when it's done something for you
 open "x-apple.systempreferences:com.apple.Notifications-Settings.extension?bundleId=org.hammerspoon.Hammerspoon"
 ```
 
-## Auto-switching to Multi-Output for Shazaming when connecting headphones
+## Automation Code
+
+### Auto-switching to Multi-Output for Shazaming when connecting headphones
 
 Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
 to be able to Shazam songs while watching a movie or TV show on AirPods.
@@ -141,7 +144,7 @@ See
 [HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#automatically-switch-to-using-multi-output-device-when-connecting-headphones)
 page section for more details.
 
-## Automatically running Speed Test when connecting to a wifi network
+### Automatically running Speed Test when connecting to a wifi network
 
 TODO + refactor
 
