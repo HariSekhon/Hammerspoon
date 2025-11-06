@@ -17,8 +17,7 @@ TODO: update Codacy grade link below - it's a hash so cannot be predicted to rep
 [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=HariSekhon_hammerspoon&metric=security_rating)](https://sonarcloud.io/dashboard?id=HariSekhon_hammerspoon)
 
-[![Python](https://img.shields.io/badge/Python-3-blue?logo=python&logoColor=white)](#readme)
-[![Linux](https://img.shields.io/badge/OS-Linux-blue?logo=linux)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
+[![Lua](https://img.shields.io/badge/Lua-5-000080?logo=lua&logoColor=white)](#readme)
 [![Mac](https://img.shields.io/badge/OS-Mac-blue?logo=apple)](https://github.com/HariSekhon/DevOps-Bash-tools#hari-sekhon---devops-bash-tools)
 
 [![Mac Homebrew](https://img.shields.io/badge/Mac-Homebrew-999999?logo=apple&logoColor=white)](https://brew.sh/)
