@@ -27,6 +27,7 @@ function notify(msg, title)
 
     -- print to Console log for debugging
     print(msg)
+
     -- treats everything between [[ ]] as a literal string
     --hs.osascript.applescript([[ display notification msg with title "Hammerspoon" ]])
     local script = string.format(
