@@ -48,7 +48,7 @@
     - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
     - [Allow Desktop Notifications](#allow-desktop-notifications)
 - [Automation Code](#automation-code)
-  - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-airpods)
+  - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods or Headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-airpods-or-headphones)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
 - [Modular Structure](#modular-structure)
 
@@ -127,22 +127,22 @@ open "x-apple.systempreferences:com.apple.Notifications-Settings.extension?bundl
 
 ## Automation Code
 
-### Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods
+### Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods or Headphones
 
-Automatically switches from AirPods connection to Multi-Output Audio Device and Blackhole input
-to be able to Shazam songs while watching a movie or TV show on AirPods.
+Automatically switches from AirPods / Headphones connection to Multi-Output Audio Device and Blackhole input
+to be able to Shazam songs while watching a movie or TV show on AirPods / Headphones.
 
 You will need to install the Blackhole audio driver and set up a Midi Multi-Output Audio device too.
-
-If using headphones other than AirPods you can simply edit the matching line in the code:
-
-```lua
-if current:match("AirPods") then
-```
 
 See
 [HariSekhon/Knowledge-Base - Audio](https://github.com/HariSekhon/Knowledge-Base/blob/main/audio.md#shazam-songs-while-using-headphones-on-mac)
 page section for more details on this setup.
+
+If you set your Sound output to the in-built Mac Speaker then the code resets the mic to use the standard Mac built-in Mic
+to keep the input and output aligned in an intuitive way.
+
+If you set your Sound output to any device with `Multi-Output` or `Blackhole` in the name then
+automatically switches to the Blackhole input for the loop shazamming trick.
 
 ### Auto-run Speed Test when connecting to a Wifi network
 
