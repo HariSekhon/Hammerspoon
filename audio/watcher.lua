@@ -56,8 +56,12 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             else
                 log.d("Debounced, skipping switch")
             end
-        elseif current:match("Speakers.*Blackhole")
-            or current:match("Multi%-Output Device") then
+        -- if any output with the word Blackhold or Multi-Output are used,
+        -- assume and switch to Blackhole loopback input too
+        --elseif current:match("Speakers.*Blackhole")
+        --    or current:match("Multi%-Output Device") then
+        elseif current:match("Blackhole")
+            or current:match("Multi%-Output") then
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
