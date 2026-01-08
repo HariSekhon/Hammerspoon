@@ -33,7 +33,7 @@ function notify(msg, title)
         'display notification "%s" with title "%s"',
         msg, title
     )
-    hs.osascript.applescript(script)
+    --hs.osascript.applescript(script)
     hs.notify.new({
         title = title,
         informativeText = msg,
