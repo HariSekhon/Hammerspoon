@@ -34,7 +34,8 @@ hs.audiodevice.watcher.setCallback(function(_, _)
 
     -- eventName turns out to be 'nil'
     --if eventName == "dOut " then
-        if current:match("AirPods") then
+        if current:match("AirPods")
+        or current:match("Headphone") then
             --switchOutputToMultiDevice()
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
