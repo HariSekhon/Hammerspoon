@@ -15,10 +15,10 @@
 --
 
 -- ========================================================================== --
--- Hammerspoon Audio Device Listings
+--                      Hammerspoon Audio Device Listings
 -- ========================================================================== --
 
--- luacheck: globals getFirstBlackholeInputDevice getFirstMultiOutputDevice
+-- luacheck: globals getMacMic getFirstBlackholeInputDevice getFirstMultiOutputDevice
 
 local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
 
@@ -29,6 +29,16 @@ local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
 function getFirstMultiOutputDevice()
     local handle = io.popen(
         switch_audio .. " -a -t output | grep -i -m1 '^Multi-Output Device'"
+    )
+    if not handle then return nil end
+    local result = handle:read("*l")
+    handle:close()
+    return result
+end
+
+function getMacMic()
+    local handle = io.popen(
+        switch_audio .. " -a -t input | grep -i -m1 '^Mac.*[[:space:]]Microphone$'"
     )
     if not handle then return nil end
     local result = handle:read("*l")
