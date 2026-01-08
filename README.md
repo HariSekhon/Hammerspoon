@@ -147,6 +147,23 @@ page section for more details on this setup.
 
 TODO + refactor
 
+## Modular Structure
+
+The top level `init.lua` is the entry point that imports the rest of the code structured thus:
+
+```$ tree -P '*.lua' --prune
+.
+├── audio
+│   ├── devices.lua
+│   ├── switch.lua
+│   └── watcher.lua
+├── init.lua
+└── utils
+    └── notify.lua
+
+3 directories, 5 files
+```
+
 ## More Core Repos
 
 <!-- OTHER_REPOS_START -->
