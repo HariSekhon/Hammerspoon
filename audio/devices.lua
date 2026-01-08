@@ -15,7 +15,7 @@
 --
 
 -- ========================================================================== --
---                       Hammerspoon Audio Device Listings
+--       H a m m e r s p o o n   A u d i o   D e v i c e   L i s t i n g s
 -- ========================================================================== --
 
 -- luacheck: globals getMacMic getFirstBlackholeInputDevice getFirstMultiOutputDevice
