@@ -146,13 +146,14 @@ page section for more details on this setup.
 
 ### Auto-run Speed Test when connecting to a Wifi network
 
-TODO + refactor
+TODO
 
 ## Modular Structure
 
 The top level `init.lua` is the entry point that imports the rest of the code structured thus:
 
-```$ tree -P '*.lua' --prune
+```shell
+$ tree -P '*.lua' --prune
 .
 ├── audio
 │   ├── devices.lua
