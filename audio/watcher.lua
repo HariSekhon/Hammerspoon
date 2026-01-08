@@ -15,7 +15,7 @@
 --
 
 -- ========================================================================== --
---                      Hammerspoon Audio Change Watcher
+--        H a m m e r s p o o n   A u d i o   C h a n g e   W a t c h e r
 -- ========================================================================== --
 
 -- luacheck: globals hs switchInputToMacMic switchInputToBlackhole switchOutputToMultiDevice
