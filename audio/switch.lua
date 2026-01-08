@@ -24,6 +24,8 @@
 --local log = hs.logger.new("audioSwitch", "info")
 local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
 
+--local prevOutput = hs.audiodevice.defaultOutputDevice():name()
+
 -- global so we can check it from Hammerspoon Console for debugging
 function switchInputToBlackhole()
     local target = getFirstBlackholeInputDevice()
