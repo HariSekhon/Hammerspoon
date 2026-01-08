@@ -22,15 +22,21 @@
 
 --local log = hs.logger.new("notifier", "info")
 
-function notify(msg)
+function notify(msg, title)
+    title = title or "Hammerspoon"
+
     -- print to Console log for debugging
     print(msg)
     -- treats everything between [[ ]] as a literal string
     --hs.osascript.applescript([[ display notification msg with title "Hammerspoon" ]])
     local script = string.format(
-        'display notification "%s" with title "Hammerspoon"',
-        msg
+        'display notification "%s" with title "%s"',
+        msg, title
     )
     hs.osascript.applescript(script)
-    hs.notify(msg)
+    hs.notify.new({
+        title = title,
+        informativeText = msg,
+        withdrawAfter = 5,
+    }):send()
 end
