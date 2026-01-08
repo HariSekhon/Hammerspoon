@@ -46,7 +46,7 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             else
                 log.d("Debounced, skipping switch")
             end
-        elseif current:match("^Mac.*Speakers") then
+        elseif current:match("^Mac.*Speakers$") then
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
