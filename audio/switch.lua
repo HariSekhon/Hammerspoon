@@ -34,24 +34,24 @@ function switchInputToBlackhole()
         hs.execute(
             string.format('%s -t input -s "%s"', switch_audio, target)
         )
-        hs.notify.new({title="Audio Output Switched", informativeText="Now using: " .. target}):send()
+        hs.notify.new({title="Audio Input Switched", informativeText="Now using: " .. target}):send()
         -- duplicates timestamp in the console and doesn't even prefix info level
-        --log.i("Audio Output Switched to " .. target)
-        local msg="Audio Output Switched to: " .. target
+        --log.i("Audio Input Switched to " .. target)
+        local msg="Audio Input Switched to: " .. target
         notify(msg)
     else
-        local msg_device_not_found="No Multi-Output Device found - you must first configure one" ..
+        local msg_device_not_found="No Blackhold Device found - you must first configure one" ..
 					               ", see HariSekhon/Knowledge-Base Mac and Audio pages for details"
         -- Deprecated API - doesn't work, use notify function workaround
         --hs.notify.new(
 		--    {
-		--        title="Audio Output Switch Failed",
+		--        title="Audio Input Switch Failed",
 		--        informativeText=msg_device_not_found
 		--    }
 		--):send()
         -- duplicates timestamp in the console and doesn't even prefix info level
-        --log.w("Audio Output Switch Failed")
-        local msg="Audio Output Switch Failed - " .. msg_device_not_found
+        --log.w("Audio Input Switch Failed")
+        local msg="Audio Input Switch Failed - " .. msg_device_not_found
         notify(msg)
     end
 end
@@ -80,25 +80,25 @@ function switchOutputToMultiDevice()
     local target = getFirstMultiOutputDevice()
 
     if target and #target > 0 then
-        --hs.notify.new({title="Audio Input Switched", informativeText="Now using: " .. target}):send()
+        --hs.notify.new({title="Audio Output Switched", informativeText="Now using: " .. target}):send()
         hs.execute(
             string.format('%s -t output -s "%s"', switch_audio, target)
         )
-        local msg="Audio Input Switched to: " .. target
+        local msg="Audio Output Switched to: " .. target
         notify(msg)
     else
-        local msg_device_not_found="No Blackhole Input Device found - you must first install Blackhole" ..
+        local msg_device_not_found="No Multi-Output Device found - you must first set it up" ..
 					               ", see HariSekhon/Knowledge-Base Mac and Audio pages for details"
         -- Deprecated API - doesn't work, use notify function workaround
         --hs.notify.new(
 		--    {
-		--        title="Audio Input Switch Failed",
+		--        title="Audio Output Switch Failed",
 		--        informativeText=msg_device_not_found
 		--    }
 		--):send()
         -- duplicates timestamp in the console and doesn't even prefix info level
         --log.w("Audio Output Switch Failed")
-        local msg="Audio Input Switch Failed - " .. msg_device_not_found
+        local msg="Audio Output Switch Failed - " .. msg_device_not_found
         notify(msg)
     end
 end
