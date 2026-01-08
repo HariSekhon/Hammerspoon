@@ -46,6 +46,16 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             else
                 log.d("Debounced, skipping switch")
             end
+        elseif current:match("^Mac.*Speakers") then
+            local now = hs.timer.secondsSinceEpoch()
+            if now - last_switch > debounce_time then
+                last_switch = now
+                log.d("Debounce OK, switching output")
+                -- small delay to allow macOS to settle
+                hs.timer.doAfter(0.5, switchInputToMacMic)
+            else
+                log.d("Debounced, skipping switch")
+            end
         end
         --prevOutput = current
     --end
