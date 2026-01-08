@@ -26,26 +26,29 @@ local log = hs.logger.new("audioWatcher", "info")
 local last_switch = 0
 local debounce_time = 1  -- seconds
 
+--hs.audiodevice.watcher.setCallback(function(uid, eventName)
 hs.audiodevice.watcher.setCallback(function(_, _)
+    -- print to Console log for debugging
     local current = hs.audiodevice.defaultOutputDevice():name()
     print("Audio event:", current)
 
-    if not current:match("AirPods") then
-        return
-    end
-
-    local now = hs.timer.secondsSinceEpoch()
-    if now - last_switch <= debounce_time then
-        log.d("Debounced, skipping switch")
-        return
-    end
-
-    last_switch = now
-    log.d("Debounce OK, switching audio")
-
-    -- allow macOS to settle
-    hs.timer.doAfter(0.5, switchInputToBlackhole)
-    hs.timer.doAfter(0.5, switchOutputToMultiDevice)
+    -- eventName turns out to be 'nil'
+    --if eventName == "dOut " then
+        if current:match("AirPods") then
+            --switchOutputToMultiDevice()
+            local now = hs.timer.secondsSinceEpoch()
+            if now - last_switch > debounce_time then
+                last_switch = now
+                log.d("Debounce OK, switching output")
+                -- small delay to allow macOS to settle
+                hs.timer.doAfter(0.5, switchInputToBlackhole)
+                hs.timer.doAfter(0.5, switchOutputToMultiDevice)
+            else
+                log.d("Debounced, skipping switch")
+            end
+        end
+        --prevOutput = current
+    --end
 end)
 
 hs.audiodevice.watcher.start()
