@@ -34,7 +34,6 @@ function switchInputToBlackhole()
         hs.execute(
             string.format('%s -t input -s "%s"', switch_audio, target)
         )
-        hs.notify.new({title="Audio Input Switched", informativeText="Now using: " .. target}):send()
         -- duplicates timestamp in the console and doesn't even prefix info level
         --log.i("Audio Input Switched to " .. target)
         local msg="Audio Input Switched to: " .. target
