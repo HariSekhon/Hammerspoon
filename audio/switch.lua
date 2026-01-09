@@ -28,8 +28,11 @@ local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
 
 -- global so we can check it from Hammerspoon Console for debugging
 function switchInputTo(target)
-    local current = hs.audiodevice.defaultInputDevice():name()
-    if current == target then
+    local current = hs.audiodevice.defaultInputDevice()
+    if not current then
+        return
+    end
+    if current:name() == target then
         return
     end
     hs.execute(
@@ -42,8 +45,11 @@ function switchInputTo(target)
 end
 
 function switchOutputTo(target)
-    local current = hs.audiodevice.defaultOutputDevice():name()
-    if current == target then
+    local current = hs.audiodevice.defaultOutputDevice()
+    if not current then
+        return
+    end
+    if current:name() == target then
         return
     end
     hs.execute(
