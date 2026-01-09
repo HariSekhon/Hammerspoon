@@ -19,7 +19,7 @@
 -- ========================================================================== --
 
 -- luacheck: ignore 631
--- luacheck: globals hs notify getMacMic getFirstBlackholeInputDevice getFirstMultiOutputDevice switchInputToMacMic switchInputToBlackhole switchOutputToMultiDevice
+-- luacheck: globals hs notify getMacMic getFirstBlackholeInputDevice getFirstMultiOutputDevice switchInputTo switchOutputTo switchInputToMacMic switchInputToBlackhole switchOutputToMultiDevice
 
 --local log = hs.logger.new("audioSwitch", "info")
 local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
@@ -27,19 +27,39 @@ local switch_audio = "/opt/homebrew/bin/SwitchAudioSource"
 --local prevOutput = hs.audiodevice.defaultOutputDevice():name()
 
 -- global so we can check it from Hammerspoon Console for debugging
+function switchInputTo(target)
+    local current = hs.audiodevice.defaultInputDevice()
+    if current == target then
+        return
+    end
+    hs.execute(
+        string.format('%s -t input -s "%s"', switch_audio, target)
+    )
+    -- duplicates timestamp in the console and doesn't even prefix info level
+    --log.i("Audio Input Switched to " .. target)
+    local msg="Audio Input Switched to: " .. target
+    notify(msg)
+end
+
+function switchOutputTo(target)
+    local current = hs.audiodevice.defaultOuputDevice()
+    if current == target then
+        return
+    end
+    hs.execute(
+        string.format('%s -t output -s "%s"', switch_audio, target)
+    )
+    local msg="Audio Ouput Switched to: " .. target
+    notify(msg)
+end
+
 function switchInputToBlackhole()
     local target = getFirstBlackholeInputDevice()
 
     if target and #target > 0 then
-        hs.execute(
-            string.format('%s -t input -s "%s"', switch_audio, target)
-        )
-        -- duplicates timestamp in the console and doesn't even prefix info level
-        --log.i("Audio Input Switched to " .. target)
-        local msg="Audio Input Switched to: " .. target
-        notify(msg)
+        switchInputTo(target)
     else
-        local msg_device_not_found="No Blackhold Device found - you must first configure one" ..
+        local msg_device_not_found="No Blackhole Device found - you must first configure one" ..
 					               ", see HariSekhon/Knowledge-Base Mac and Audio pages for details"
         -- Deprecated API - doesn't work, use notify function workaround
         --hs.notify.new(
@@ -59,10 +79,7 @@ function switchInputToMacMic()
     local target = getMacMic()
 
     if target and #target > 0 then
-        hs.execute(
-            string.format('%s -t input -s "%s"', switch_audio, target)
-        )
-        notify("Audio Input Switched to: " .. target)
+        switchInputTo(target)
     else
         notify(
             "Audio Input Switch Failed - " ..
@@ -80,11 +97,7 @@ function switchOutputToMultiDevice()
 
     if target and #target > 0 then
         --hs.notify.new({title="Audio Output Switched", informativeText="Now using: " .. target}):send()
-        hs.execute(
-            string.format('%s -t output -s "%s"', switch_audio, target)
-        )
-        local msg="Audio Output Switched to: " .. target
-        notify(msg)
+        switchOutputTo(target)
     else
         local msg_device_not_found="No Multi-Output Device found - you must first set it up" ..
 					               ", see HariSekhon/Knowledge-Base Mac and Audio pages for details"
