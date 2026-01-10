@@ -27,6 +27,7 @@
 -- 'hs' is a Hammerspoon global
 -- luacheck: globals hs notify getFirstBlackholeInputDevice getFirstMultiOutputDevice switchToBlackholeInput switchToMultiOutput
 
+require("auto-reload")
 require("audio.devices")
 require("audio.switch")
 require("audio.watcher")
