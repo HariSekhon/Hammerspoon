@@ -31,3 +31,5 @@ require("audio.devices")
 require("audio.switch")
 require("audio.watcher")
 require("utils.notify")
+
+notify("Hammerspoon Config (Re)Loaded")
