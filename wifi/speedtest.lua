@@ -67,9 +67,7 @@ local function maybeRunSpeedtest()
     if ssid then
         print("Wi-Fi event, SSID: " .. tostring(ssid))
     else
-        if not lastWasNil then
-            print("SSID not yet available")
-        end
+        -- ignore Wi-Fi disconnection events
         lastWasNil = true
         return
     end
