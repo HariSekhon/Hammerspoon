@@ -30,23 +30,19 @@ local speedtestApp = nil
 local speedtestPath = nil
 
 -- Detect Speedtest installation and cache application object
-do
-    local app = hs.application.find(SPEEDTEST_BUNDLE_ID)
+local appPath = hs.application.pathForBundleID(SPEEDTEST_BUNDLE_ID)
+if appPath then
+    speedtestPath = "bundle-id"
+    print("Speedtest installed (bundle ID): " .. appPath)
+else
+    local app = hs.application.find(SPEEDTEST_NAME)
     if app then
-        speedtestApp  = app
-        speedtestPath = "bundle-id"
-        print("Speedtest found via bundle ID")
-    else
-        app = hs.application.find(SPEEDTEST_NAME)
-        if app then
-            speedtestApp  = app
-            speedtestPath = "name"
-            print("Speedtest found via app name")
-        end
+        speedtestPath = "name"
+        print("Speedtest found by name (already running)")
     end
 end
 
-if not speedtestApp then
+if not speedtestPath then
     print("Speedtest not installed, Wi-Fi watcher not started")
     return
 end
