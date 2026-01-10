@@ -159,11 +159,12 @@ $ tree -P '*.lua' --prune
 │   ├── devices.lua
 │   ├── switch.lua
 │   └── watcher.lua
+├── auto-reload.lua
 ├── init.lua
 └── utils
     └── notify.lua
 
-3 directories, 5 files
+3 directories, 6 files
 ```
 
 ## More Core Repos
