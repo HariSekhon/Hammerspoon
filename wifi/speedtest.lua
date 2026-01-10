@@ -48,7 +48,6 @@ if not speedtestPath then
 end
 
 local lastSSID = nil
-local lastWasNil = false
 local lastRun  = 0
 local debounceSeconds = 30
 
@@ -64,13 +63,13 @@ end
 
 local function maybeRunSpeedtest()
     local ssid = hs.wifi.currentNetwork()
-    if ssid then
-        print("Wi-Fi event, SSID: " .. tostring(ssid))
-    else
-        -- ignore Wi-Fi disconnection events
-        lastWasNil = true
+
+    -- ignore Wi-Fi disconnection events
+    if not ssid then
         return
     end
+
+    print("Wi-Fi joined event, SSID: " .. tostring(ssid))
 
     if ssid == lastSSID then
         print("Same SSID, ignoring")
