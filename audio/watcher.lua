@@ -44,7 +44,7 @@ hs.audiodevice.watcher.setCallback(function(_, _)
                 -- small delay to allow macOS to settle
                 hs.timer.doAfter(0.5, switchOutputToMultiDevice)
                 -- sometimes fails to switch to Multi-Device Output simultaneously so staggering these
-                hs.timer.doAfter(1.0, switchInputToBlackhole)
+                hs.timer.doAfter(1.5, switchInputToBlackhole)
             else
                 log.d("Debounced, skipping switch")
             end
