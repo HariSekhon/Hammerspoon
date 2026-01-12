@@ -31,6 +31,12 @@ require("auto-reload")
 require("audio.devices")
 require("audio.switch")
 require("audio.watcher")
+
+--require("wifi.speedtest")
+--require("wifi.test")
 require("utils.notify")
+
+require("transmission.utils")
+require("transmission.watcher")
 
 notify("Hammerspoon Config (Re)Loaded")
