@@ -48,8 +48,10 @@
     - [Auto-Start Hammerspoon](#auto-start-hammerspoon)
     - [Allow Desktop Notifications](#allow-desktop-notifications)
 - [Automation Code](#automation-code)
+  - [Auto-Reload Hammerspoon Upon Any Code Changes](#auto-reload-hammerspoon-upon-any-code-changes)
   - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods or Headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-airpods-or-headphones)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
+  - [Quit Transmission on Hotspots](#quit-transmission-on-hotspots)
 - [Modular Structure](#modular-structure)
 
 <!-- INDEX_END -->
@@ -127,6 +129,10 @@ open "x-apple.systempreferences:com.apple.Notifications-Settings.extension?bundl
 
 ## Automation Code
 
+### Auto-Reload Hammerspoon Upon Any Code Changes
+
+Handled by the self-watcher in `auto-reload.lua`.
+
 ### Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods or Headphones
 
 Automatically switches from AirPods / Headphones connection to Multi-Output Audio Device and Blackhole input
@@ -147,6 +153,20 @@ automatically switches to the Blackhole input for the loop shazamming trick.
 ### Auto-run Speed Test when connecting to a Wifi network
 
 TODO
+
+### Quit Transmission on Hotspots
+
+Quit Transmission bittorrent client automatically when connecting to a personal hotspot to save your data.
+
+I have accidentally eaten my entire
+[digital nomad mobile e-sim](https://github.com/HariSekhon/Knowledge-Base/blob/main/travel.md#mobile-e-sims)
+data plan by connecting my laptop to my phone hotspot to try to git push or spotify API something only to
+find Transmission has immediately used up all my data and I have to buy a new data package.
+
+This is particularly bad if you're at a bus station coding in some random country and
+they don't have a public wifi on which to buy a new data package.
+
+\#DigitNomadProblems
 
 ## Modular Structure
 
