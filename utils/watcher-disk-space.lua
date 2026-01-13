@@ -18,7 +18,7 @@
 --                       D i s k   S p a c e   A l e r t s
 -- ========================================================================== --
 
--- luacheck: globals hs log is_transmission_running get_disk_free_gb quit_transmission
+-- luacheck: globals hs log notify get_disk_free_gb
 
 local check_interval_secs = 300
 local min_free_gb = 50
