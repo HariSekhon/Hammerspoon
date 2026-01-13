@@ -24,7 +24,8 @@
 -- luacheck: globals hs log
 
 function log(msg)
+    -- also goes to macOS unified logging system Console.app, but requires more args
+    --hs.printf(msg)
     -- print to Console log for debugging
-    --print(msg)
-    hs.printf(msg)  -- also goes to macOS unified logging system Console.app
+    print(msg)
 end
