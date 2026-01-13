@@ -21,7 +21,7 @@
 -- luacheck: globals hs log notify get_disk_free_gb
 
 local check_interval_secs = 300
-local min_free_gb = 99
+local min_free_gb = 50
 local watch_path  = os.getenv("HOME")
 local warned = false
 
