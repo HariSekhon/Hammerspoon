@@ -14,7 +14,7 @@
 --  https://www.linkedin.com/in/HariSekhon
 --
 -- ========================================================================== --
---                    T r a n s m i s s i o n   W a t c h e r
+--       T r a n s m i s s i o n   H o t s p o t   Q u i t   W a t c h e r
 -- ========================================================================== --
 
 -- luacheck: globals hs notify quit_transmission
