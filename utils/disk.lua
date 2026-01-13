@@ -15,16 +15,30 @@
 --
 
 -- ========================================================================== --
---     T r a n s m i s s i o n   Q u i t   i f   D i s k   S p a c e   L o w
+--                              D i s k   U t i l s
 -- ========================================================================== --
 
 -- luacheck: globals hs get_disk_free_gb
 
 function get_disk_free_gb(path)
-    local ok, attrs = pcall(hs.fs.volumeInformation, path)
-    if not ok or not attrs or not attrs.availableCapacity then
+    -- -k = KB blocks, POSIX-stable
+    -- tail -1 avoids headers
+    -- awk prints "Available" column
+    local cmd = string.format(
+        "df -g '%s' | tail -n 1 | awk '{print $4}'",
+        path
+    )
+
+    local output = hs.execute(cmd, true)
+    if not output then
+        return nil
+    end
+    log(string.format("Disk free output gb: %s", output))
+
+    local free_gb = tonumber(output:match("(%d+)"))
+    if not free_gb then
         return nil
     end
 
-    return attrs.availableCapacity / (1024^3)
+    return free_gb
 end
