@@ -26,82 +26,81 @@
 local SPEEDTEST_BUNDLE_ID = "com.ookla.speedtest-macos"
 local SPEEDTEST_NAME     = "Speedtest"
 
-local speedtestApp = nil
+--local speedtestApp = nil
 local speedtestPath = nil
 
 -- Detect Speedtest installation and cache application object
 local appPath = hs.application.pathForBundleID(SPEEDTEST_BUNDLE_ID)
 if appPath then
     speedtestPath = "bundle-id"
-    print("Speedtest installed (bundle ID): " .. appPath)
+    log("Speedtest installed (bundle ID): " .. appPath)
 else
     local app = hs.application.find(SPEEDTEST_NAME)
     if app then
         speedtestPath = "name"
-        print("Speedtest found by name (already running)")
+        log("Speedtest found by name (already running)")
     end
 end
 
 if not speedtestPath then
-    print("Speedtest not installed, Wi-Fi watcher not started")
+    log("Speedtest not installed, Wi-Fi watcher not started")
     return
 end
 
 local lastSSID = nil
 local lastRun  = 0
-local debounceSeconds = 30
+local debounceSeconds = 60
+local pollTimer = nil
 
-local function launchSpeedtest()
-    if speedtestPath == "bundle-id" then
-        print("Launching Speedtest via bundle ID")
-        hs.application.launchOrFocusByBundleID(SPEEDTEST_BUNDLE_ID)
-    else
-        print("Launching Speedtest via app name")
-        hs.application.launchOrFocus(SPEEDTEST_NAME)
-    end
+local POLL_INTERVAL = 1      -- seconds
+local POLL_TIMEOUT  = 30     -- seconds
+local lastSSID      = nil
+
+local function launchSpeedtest(ssid)
+    log("Launching Speedtest for SSID: " .. ssid)
+    hs.application.launchOrFocusByBundleID(SPEEDTEST_BUNDLE_ID)
 end
 
-local function maybeRunSpeedtest()
-    local ssid = hs.wifi.currentNetwork()
+local function pollForSSID(reason)
+    log("Starting SSID poll (" .. reason .. ")")
 
-    -- ignore Wi-Fi disconnection events
-    if not ssid then
-        return
-    end
+    local startTime = hs.timer.secondsSinceEpoch()
+    local poller
 
-    print("Wi-Fi joined event, SSID: " .. tostring(ssid))
+    poller = hs.timer.doEvery(POLL_INTERVAL, function()
+        local ssid = hs.wifi.currentNetwork()
 
-    if ssid == lastSSID then
-        print("Same SSID, ignoring")
-        return
-    end
+        if ssid then
+            log("SSID resolved:", ssid)
+            poller:stop()
 
-    -- in practice this doesn't trigger as Hammerspoon console gets:
-    --
-    --      Wi-Fi event, SSID: nil
-    --
-    if string.find(ssid, "Phone", 1, true) then
-        print("Skipping hotspot network: " .. ssid)
-        lastSSID = ssid
-        return
-    end
+            if ssid == lastSSID then
+                log("SSID unchanged, ignoring")
+                return
+            end
 
-    local now = hs.timer.secondsSinceEpoch()
-    if now - lastRun < debounceSeconds then
-        --print("Debounced")
-        return
-    end
+            lastSSID = ssid
 
-    lastSSID = ssid
-    lastRun  = now
+            if ssid:find("Phone", 1, true) then
+                log("Skipping hotspot network:", ssid)
+                return
+            end
 
-    launchSpeedtest()
+            launchSpeedtest()
+            return
+        end
+
+        if hs.timer.secondsSinceEpoch() - startTime > POLL_TIMEOUT then
+            log("SSID poll timed out")
+            poller:stop()
+        end
+    end)
 end
 
 wifiWatcher = hs.wifi.watcher.new(function()
-    -- Delay slightly to allow SSID to stabilise
-    hs.timer.doAfter(2, maybeRunSpeedtest)
+    log("WiFi Watcher Fired")
+    pollForSSID("wifi event")
 end)
 
 wifiWatcher:start()
-print("Wi-Fi watcher started")
+log("Wi-Fi watcher started")
