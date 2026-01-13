@@ -18,19 +18,18 @@
 --        H a m m e r s p o o n   A u d i o   C h a n g e   W a t c h e r
 -- ========================================================================== --
 
--- luacheck: globals hs switchInputToMacMic switchInputToBlackhole switchOutputToMultiDevice
+-- luacheck: globals hs log switchInputToMacMic switchInputToBlackhole switchOutputToMultiDevice
 
 --local audioSwitchLog = hs.logger.new('audioSwitch', 'info')
-local log = hs.logger.new("audioWatcher", "info")
+--local logger = hs.logger.new("audioWatcher", "info")
 
 local last_switch = 0
 local debounce_time = 1  -- seconds
 
 --hs.audiodevice.watcher.setCallback(function(uid, eventName)
 hs.audiodevice.watcher.setCallback(function(_, _)
-    -- print to Console log for debugging
     local current = hs.audiodevice.defaultOutputDevice():name()
-    print("Audio event:", current)
+    log("Audio event:", current)
 
     -- eventName turns out to be 'nil'
     --if eventName == "dOut " then
@@ -40,23 +39,23 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
-                log.d("Debounce OK, switching output")
+                --logger.d("Debounce OK, switching output")
                 -- small delay to allow macOS to settle
                 hs.timer.doAfter(0.5, switchOutputToMultiDevice)
                 -- sometimes fails to switch to Multi-Device Output simultaneously so staggering these
                 hs.timer.doAfter(1.5, switchInputToBlackhole)
-            else
-                log.d("Debounced, skipping switch")
+            --else
+                --logger.d("Debounced, skipping switch")
             end
         elseif current:match("^Mac.*Speakers$") then
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
-                log.d("Debounce OK, switching output")
+                --logger.d("Debounce OK, switching output")
                 -- small delay to allow macOS to settle
                 hs.timer.doAfter(0.5, switchInputToMacMic)
-            else
-                log.d("Debounced, skipping switch")
+            --else
+                --logger.d("Debounced, skipping switch")
             end
         -- if any output with the word Blackhold or Multi-Output are used,
         -- assume and switch to Blackhole loopback input too
@@ -67,11 +66,11 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
-                log.d("Debounce OK, switching output")
+                --logger.d("Debounce OK, switching output")
                 -- small delay to allow macOS to settle
                 hs.timer.doAfter(0.5, switchInputToBlackhole)
-            else
-                log.d("Debounced, skipping switch")
+            --else
+                --logger.d("Debounced, skipping switch")
             end
         end
         --prevOutput = current
