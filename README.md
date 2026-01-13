@@ -51,6 +51,7 @@
   - [Auto-Reload Hammerspoon Upon Any Code Changes](#auto-reload-hammerspoon-upon-any-code-changes)
   - [Auto-Switch to Multi-Output to Shazam from TV/Movies while listening on AirPods or Headphones](#auto-switch-to-multi-output-to-shazam-from-tvmovies-while-listening-on-airpods-or-headphones)
   - [Auto-run Speed Test when connecting to a Wifi network](#auto-run-speed-test-when-connecting-to-a-wifi-network)
+  - [Quit Transmission if Disk Space Low](#quit-transmission-if-disk-space-low)
   - [Quit Transmission on Hotspots](#quit-transmission-on-hotspots)
 - [Modular Structure](#modular-structure)
 
@@ -154,6 +155,15 @@ automatically switches to the Blackhole input for the loop shazamming trick.
 
 TODO
 
+### Quit Transmission if Disk Space Low
+
+Using up all the disk space on macOS can result in a catastrophic bug that requires reinstall and restore from backup, as documented
+on the
+[HariSekhon/Knowlege-Base - Mac](https://github.com/HariSekhon/Knowledge-Base/blob/main/mac.md#cannot-delete---no-space-left-on-device).
+
+If disk space drops below 20GB it detects and quits Transmission bittorent client to avoid filling up the disk and causing
+a catastropic filesystem failure.
+
 ### Quit Transmission on Hotspots
 
 Quit Transmission bittorrent client automatically when connecting to a personal hotspot to save your data.
@@ -181,10 +191,19 @@ $ tree -P '*.lua' --prune
 │   └── watcher.lua
 ├── auto-reload.lua
 ├── init.lua
-└── utils
-    └── notify.lua
+├── transmission
+│   ├── utils.lua
+│   ├── watcher-disk-space.lua
+│   └── watcher-hotspot.lua
+├── utils
+│   ├── disk.lua
+│   ├── log.lua
+│   ├── notify.lua
+│   └── watcher-disk-space.lua
+└── wifi
+    └── speedtest.lua
 
-3 directories, 6 files
+5 directories, 13 files
 ```
 
 ## More Core Repos
