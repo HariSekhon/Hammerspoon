@@ -27,6 +27,9 @@
 -- 'hs' is a Hammerspoon global
 -- luacheck: globals hs notify getFirstBlackholeInputDevice getFirstMultiOutputDevice switchToBlackholeInput switchToMultiOutput
 
+require("utils.log")
+require("utils.notify")
+
 require("auto-reload")
 
 require("audio.devices")
@@ -35,10 +38,9 @@ require("audio.watcher")
 
 require("wifi.speedtest")
 --require("wifi.test")
-require("utils.log")
-require("utils.notify")
 
 require("transmission.utils")
 require("transmission.watcher-quit-on-hotspot")
+require("transmission/watcher-quit-if-disk-space-low")
 
 notify("Hammerspoon Config (Re)Loaded")
