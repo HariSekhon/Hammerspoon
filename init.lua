@@ -42,7 +42,7 @@ require("wifi.speedtest")
 --require("wifi.test")
 
 require("transmission.utils")
-require("transmission.watcher-quit-on-hotspot")
-require("transmission.watcher-quit-if-disk-space-low")
+require("transmission.watcher-hotspot")
+require("transmission.watcher-disk-space")
 
 notify("Hammerspoon Config (Re)Loaded")
