@@ -183,7 +183,7 @@ they don't have a public wifi on which to buy a new data package.
 The top level `init.lua` is the entry point that imports the rest of the code structured thus:
 
 ```shell
-$ tree -P '*.lua' --prune
+$ tree -P '*.lua' -I 'test*.lua' --prune
 .
 ├── audio
 │   ├── devices.lua
