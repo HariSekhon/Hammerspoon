@@ -53,5 +53,5 @@ local function quit_transmission_if_disk_space_low()
     end
 end
 
-log "Starting Transmission Quit if Disk Space Low Watcher"
+log "Starting Transmission Disk Space Low Watcher"
 hs.timer.doEvery(check_interval_secs, quit_transmission_if_disk_space_low)
