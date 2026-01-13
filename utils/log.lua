@@ -21,7 +21,10 @@
 -- Because hs.logger is doubling up the timestamps looking ugly in my console
 -- so replacing it with a simple print
 
+-- luacheck: globals hs log
+
 function log(msg)
     -- print to Console log for debugging
-    print(msg)
+    --print(msg)
+    hs.printf(msg)  -- also goes to macOS unified logging system Console.app
 end
