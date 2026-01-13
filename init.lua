@@ -31,6 +31,7 @@
 require("utils.log")
 require("utils.notify")
 require("utils.disk")
+require("utils.watcher-disk-space")
 
 require("auto-reload")
 
