@@ -18,7 +18,7 @@
 --                              D i s k   U t i l s
 -- ========================================================================== --
 
--- luacheck: globals hs get_disk_free_gb
+-- luacheck: globals hs log get_disk_free_gb
 
 function get_disk_free_gb(path)
     -- -k = KB blocks, POSIX-stable
@@ -29,7 +29,8 @@ function get_disk_free_gb(path)
         path
     )
 
-    local output = hs.execute(cmd, true)
+    -- false = no tty as control characters are messing up my parsesing
+    local output = hs.execute(cmd, false)
     if not output then
         return nil
     end
