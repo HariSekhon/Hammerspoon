@@ -35,6 +35,7 @@ require("audio.watcher")
 
 require("wifi.speedtest")
 --require("wifi.test")
+require("utils.log")
 require("utils.notify")
 
 require("transmission.utils")
