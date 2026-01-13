@@ -18,7 +18,7 @@
 --     T r a n s m i s s i o n   Q u i t   i f   D i s k   S p a c e   L o w
 -- ========================================================================== --
 
--- luacheck: globals hs get_disk_free_gb quit_transmission log
+-- luacheck: globals hs log is_transmission_running get_disk_free_gb quit_transmission
 
 local check_interval_secs = 120
 local min_free_gb = 20
