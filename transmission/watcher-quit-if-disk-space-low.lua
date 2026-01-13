@@ -20,15 +20,24 @@
 
 -- luacheck: globals hs get_disk_free_gb quit_transmission log
 
-local check_interval_secs = 60
+local check_interval_secs = 120
 local min_free_gb = 20
 local watch_path  = os.getenv("HOME") .. "/Downloads"
 
 local function quit_transmission_if_disk_space_low()
+    if not is_transmission_running() then
+        return
+    end
+
     local free_gb = get_disk_free_gb(watch_path)
 
     if not free_gb then
-        log("ERROR: disk space check failed for %s", watch_path)
+        log(
+            string.format(
+                "ERROR: disk space check failed for %s",
+                watch_path
+            )
+        )
         return
     end
 
@@ -44,4 +53,5 @@ local function quit_transmission_if_disk_space_low()
     end
 end
 
+log "Starting Transmission Quit if Disk Space Low Watcher"
 hs.timer.doEvery(check_interval_secs, quit_transmission_if_disk_space_low)
