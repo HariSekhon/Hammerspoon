@@ -68,7 +68,7 @@ local function hotspot_check()
   end
 end
 
-log "Starting Transmission Network Hotspot Watcher"
+log "Starting Transmission Watcher: Network Hotspot"
 local reachability = hs.network.reachability.internet()
 reachability:setCallback(hotspot_check)
 reachability:start()
