@@ -18,7 +18,7 @@
 --        H a m m e r s p o o n   C o n f i g   A u t o - R e l o a d e r
 -- ========================================================================== --
 
--- luacheck: globals hs
+-- luacheck: globals hs log
 
 -- Watches for updates to any .lua files under ~/.hammerspoon and triggers an auto-reload
 -- upon any changes such as file saves from your editor / IDE
@@ -33,7 +33,7 @@ local function reloadConfig(files)
     for _, file in ipairs(files) do
         if file:sub(-4) == ".lua" then
             --log.i("Config change detected: " .. file)
-            print("Config change detected: " .. file)
+            log("Config change detected: " .. file)
 
             if reloadTimer then
                 reloadTimer:stop()
@@ -41,7 +41,7 @@ local function reloadConfig(files)
 
             reloadTimer = hs.timer.doAfter(debounceSeconds, function()
                 --log.i("Reloading Hammerspoon config")
-                print("Reloading Hammerspoon config")
+                log("Reloading Hammerspoon config")
                 hs.reload()
             end)
 
@@ -55,4 +55,4 @@ hs.pathwatcher
     :start()
 
 --log.i("Hammerspoon auto-reload watcher started")
-print("Hammerspoon auto-reload watcher started")
+log("Hammerspoon auto-reload watcher started")
