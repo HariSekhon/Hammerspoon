@@ -27,6 +27,7 @@
 -- 'hs' is a Hammerspoon global
 -- luacheck: globals hs notify getFirstBlackholeInputDevice getFirstMultiOutputDevice switchToBlackholeInput switchToMultiOutput
 
+-- must come first as they're used by the following code
 require("utils.log")
 require("utils.notify")
 
