@@ -34,7 +34,7 @@ function get_disk_free_gb(path)
     if not output then
         return nil
     end
-    log(string.format("Disk free output gb: %s", output))
+    --log(string.format("Disk free output gb: %s", output))
 
     local free_gb = tonumber(output:match("(%d+)"))
     if not free_gb then
