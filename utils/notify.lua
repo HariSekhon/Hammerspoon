@@ -18,15 +18,14 @@
 --               H a m m e r s p o o n   N o t i f i c a t i o n s
 -- ========================================================================== --
 
--- luacheck: globals hs notify
+-- luacheck: globals hs notify log
 
 --local log = hs.logger.new("notifier", "info")
 
 function notify(msg, title)
     title = title or "Hammerspoon"
 
-    -- print to Console log for debugging
-    print(msg)
+    log(msg)
 
     -- treats everything between [[ ]] as a literal string:
     --
