@@ -18,7 +18,7 @@
 --               H a m m e r s p o o n   N o t i f i c a t i o n s
 -- ========================================================================== --
 
--- luacheck: globals hs notify log
+-- luacheck: globals hs log notify alert
 
 --local log = hs.logger.new("notifier", "info")
 
@@ -46,4 +46,9 @@ function notify(msg, title)
         informativeText = msg,
         withdrawAfter = 5,
     }):send()
+end
+
+function alert(msg)
+    log(msg)
+    hs.alert.show(msg, {}, true)
 end
