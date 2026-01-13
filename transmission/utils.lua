@@ -18,7 +18,15 @@
 --                      T r a n s m i s s i o n   U t i l s
 -- ========================================================================== --
 
--- luacheck: globals hs pause_transmission resume_transmission quit_transmission
+-- luacheck: globals hs is_transmission_running pause_transmission resume_transmission quit_transmission
+
+local function transmission_app()
+    return hs.application.get("Transmission")
+end
+
+function is_transmission_running()
+    return transmission_app() ~= nil
+end
 
 function pause_transmission()
   hs.osascript.applescript([[
