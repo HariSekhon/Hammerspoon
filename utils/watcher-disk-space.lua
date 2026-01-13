@@ -21,12 +21,12 @@
 -- luacheck: globals hs log notify get_disk_free_gb
 
 local check_interval_secs = 300
-local min_free_gb = 50
+local min_free_gb = 99
 local watch_path  = os.getenv("HOME")
 local warned = false
 
 local function warn_if_disk_space_low()
-    if warned == false then
+    if warned then
         return
     end
     local free_gb = get_disk_free_gb(watch_path)
