@@ -30,6 +30,7 @@
 -- must come first as they're used by the following code
 require("utils.log")
 require("utils.notify")
+require("utils.disk")
 
 require("auto-reload")
 
@@ -42,6 +43,6 @@ require("wifi.speedtest")
 
 require("transmission.utils")
 require("transmission.watcher-quit-on-hotspot")
-require("transmission/watcher-quit-if-disk-space-low")
+require("transmission.watcher-quit-if-disk-space-low")
 
 notify("Hammerspoon Config (Re)Loaded")
