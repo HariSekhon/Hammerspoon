@@ -17,7 +17,7 @@
 --       T r a n s m i s s i o n   H o t s p o t   Q u i t   W a t c h e r
 -- ========================================================================== --
 
--- luacheck: globals hs notify quit_transmission
+-- luacheck: globals hs log notify quit_transmission
 
 local hotspot_ssids = {
   "iPhone",
@@ -68,7 +68,7 @@ local function hotspot_check()
   end
 end
 
-print "Starting Transmission Network Hotspot Watcher"
+log "Starting Transmission Network Hotspot Watcher"
 local reachability = hs.network.reachability.internet()
 reachability:setCallback(hotspot_check)
 reachability:start()
