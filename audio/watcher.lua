@@ -85,6 +85,10 @@ hs.audiodevice.watcher.setCallback(function(_, _)
         -- give CoreAudio time to settle before forcing output
         hs.timer.doAfter(0.5, switchOutputToMultiDevice)
         hs.timer.doAfter(0.9, startVerifyMultiOutput)
+        hs.timer.doAfter(0.4, function()
+            log("Reasserting Multi-Output to work around aggregate steams bug in macOS core audio for AirPods bluetooth")
+            switchOutputToMultiDevice()
+        end)
         return
     end
 
