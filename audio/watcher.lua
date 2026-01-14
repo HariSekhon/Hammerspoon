@@ -23,63 +23,95 @@
 --local audioSwitchLog = hs.logger.new('audioSwitch', 'info')
 --local logger = hs.logger.new("audioWatcher", "info")
 
-local last_switch = 0
-local debounce_time = 1  -- seconds
+local state = "idle"
+local verify_timer = nil
+local verify_retries = 0
+local max_retries = 6
 
---hs.audiodevice.watcher.setCallback(function(uid, eventName)
+local function defaultOutputName()
+    local dev = hs.audiodevice.defaultOutputDevice()
+    return dev and dev:name() or nil
+end
+
+local function stopVerifier()
+    if verify_timer then
+        verify_timer:stop()
+        verify_timer = nil
+    end
+end
+
+local function startVerifyMultiOutput()
+    stopVerifier()
+    verify_retries = 0
+
+    verify_timer = hs.timer.doEvery(0.4, function()
+        local name = defaultOutputName()
+        log("Verifying output:", name or "<nil>")
+
+        if name and name:match("Multi%-Output") then
+            log("Multi-Output confirmed, switching input to BlackHole")
+            stopVerifier()
+            switchInputToBlackhole()
+            state = "idle"
+            return
+        end
+
+        verify_retries = verify_retries + 1
+        if verify_retries >= max_retries then
+            log("Failed to reach Multi-Output, giving up")
+            stopVerifier()
+            state = "idle"
+        end
+    end)
+end
+
 hs.audiodevice.watcher.setCallback(function(_, _)
-    local current = hs.audiodevice.defaultOutputDevice()
-    if not current then
-        log("Audio event: nil, skipping all actions")
+    local name = defaultOutputName()
+    if not name then
+        log("Audio event: <no default output>")
         return
     end
-    name = current:name()
-    log(string.format("Audio event: %s", name))
 
-    -- eventName turns out to be 'nil'
-    --if eventName == "dOut " then
-        if name:match("AirPods")
-        or name:match("Headphone") then
-            --switchOutputToMultiDevice()
-            local now = hs.timer.secondsSinceEpoch()
-            if now - last_switch > debounce_time then
-                last_switch = now
-                --logger.d("Debounce OK, switching output")
-                -- small delay to allow macOS to settle
-                hs.timer.doAfter(0.5, switchOutputToMultiDevice)
-                -- sometimes fails to switch to Multi-Device Output simultaneously so staggering these
-                hs.timer.doAfter(1.5, switchInputToBlackhole)
-            --else
-                --logger.d("Debounced, skipping switch")
-            end
-        elseif name:match("^Mac.*Speakers$") then
-            local now = hs.timer.secondsSinceEpoch()
-            if now - last_switch > debounce_time then
-                last_switch = now
-                --logger.d("Debounce OK, switching output")
-                -- small delay to allow macOS to settle
-                hs.timer.doAfter(0.5, switchInputToMacMic)
-            --else
-                --logger.d("Debounced, skipping switch")
-            end
-        -- if any output with the word Blackhold or Multi-Output are used,
-        -- assume and switch to Blackhole loopback input too
-        --elseif name:match("Speakers.*Blackhole")
-        --    or name:match("Multi%-Output Device") then
-        elseif name:match("Blackhole")
-            or name:match("Multi%-Output") then
-            local now = hs.timer.secondsSinceEpoch()
-            if now - last_switch > debounce_time then
-                last_switch = now
-                --logger.d("Debounce OK, switching output")
-                -- small delay to allow macOS to settle
-                hs.timer.doAfter(0.5, switchInputToBlackhole)
-            --else
-                --logger.d("Debounced, skipping switch")
-            end
-        end
-        --prevOutput = name
-    --end
+    log(string.format("Audio event: %s, state: %s", name, state))
+
+    -- ===== AirPods / Headphones: automatic sequence =====
+    if (name:match("AirPods") or
+        name:match("Headphone"))
+        and state == "idle" then
+
+        log("AirPods detected -> switching to Multi-Output")
+        state = "switching_to_multi_output"
+
+        -- give CoreAudio time to settle before forcing output
+        hs.timer.doAfter(0.5, switchOutputToMultiDevice)
+        hs.timer.doAfter(0.9, startVerifyMultiOutput)
+        return
+    end
+
+    -- ===== Manual Multi-Output selection =====
+    if name:match("Multi%-Output")
+        and state == "idle" then
+
+        log("Manual Multi-Output detected -> switching input to BlackHole")
+        state = "waiting_for_manual_multi"
+
+        -- slight delay avoids fighting CoreAudio
+        hs.timer.doAfter(0.4, function()
+            switchInputToBlackhole()
+            state = "idle"
+        end)
+        return
+    end
+
+    -- ===== Mac Speakers =====
+    if name:match("^Mac.*Speakers$")
+        and state == "idle" then
+
+        log("Mac Speakers detected -> switching input to Mac mic")
+        state = "idle"
+        hs.timer.doAfter(0.4, switchInputToMacMic)
+        return
+    end
 end)
 
 hs.audiodevice.watcher.start()
