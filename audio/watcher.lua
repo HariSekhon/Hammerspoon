@@ -28,13 +28,18 @@ local debounce_time = 1  -- seconds
 
 --hs.audiodevice.watcher.setCallback(function(uid, eventName)
 hs.audiodevice.watcher.setCallback(function(_, _)
-    local current = hs.audiodevice.defaultOutputDevice():name()
-    log("Audio event:", current)
+    local current = hs.audiodevice.defaultOutputDevice()
+    if not current then
+        log("Audio event: nil, skipping all actions")
+        return
+    end
+    name = current:name()
+    log(string.format("Audio event: %s", name))
 
     -- eventName turns out to be 'nil'
     --if eventName == "dOut " then
-        if current:match("AirPods")
-        or current:match("Headphone") then
+        if name:match("AirPods")
+        or name:match("Headphone") then
             --switchOutputToMultiDevice()
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
@@ -47,7 +52,7 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             --else
                 --logger.d("Debounced, skipping switch")
             end
-        elseif current:match("^Mac.*Speakers$") then
+        elseif name:match("^Mac.*Speakers$") then
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
@@ -59,10 +64,10 @@ hs.audiodevice.watcher.setCallback(function(_, _)
             end
         -- if any output with the word Blackhold or Multi-Output are used,
         -- assume and switch to Blackhole loopback input too
-        --elseif current:match("Speakers.*Blackhole")
-        --    or current:match("Multi%-Output Device") then
-        elseif current:match("Blackhole")
-            or current:match("Multi%-Output") then
+        --elseif name:match("Speakers.*Blackhole")
+        --    or name:match("Multi%-Output Device") then
+        elseif name:match("Blackhole")
+            or name:match("Multi%-Output") then
             local now = hs.timer.secondsSinceEpoch()
             if now - last_switch > debounce_time then
                 last_switch = now
@@ -73,7 +78,7 @@ hs.audiodevice.watcher.setCallback(function(_, _)
                 --logger.d("Debounced, skipping switch")
             end
         end
-        --prevOutput = current
+        --prevOutput = name
     --end
 end)
 
