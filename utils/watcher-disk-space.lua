@@ -53,9 +53,7 @@ local function warn_if_disk_space_low()
                 free_gb,
                 threshold
             )
-            notify(msg)
             alert(msg)
-            log(msg)
             warned[threshold] = true
         end
     end
