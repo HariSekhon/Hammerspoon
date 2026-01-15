@@ -50,5 +50,6 @@ end
 
 function alert(msg)
     log(msg)
+    -- true = persists in the middle of the screen until Hammerspoon is quit or reloaded
     hs.alert.show(msg, {}, true)
 end
