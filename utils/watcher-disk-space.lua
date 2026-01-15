@@ -48,7 +48,7 @@ local function warn_if_disk_space_low()
             min_free_gb
         )
         notify(msg)
-        alert(msg)
+        --alert(msg)
         log(msg)
         warned = true
     end
