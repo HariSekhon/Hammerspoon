@@ -68,10 +68,10 @@ local function hotspot_check()
   end
 end
 
-log "Starting Transmission Watcher: Network Hotspot"
 local reachability = hs.network.reachability.internet()
 reachability:setCallback(hotspot_check)
 reachability:start()
+log "Watcher Started: Transmission - Network Hotspot"
 
 -- run once at load just in case and to make immediately testing easier via ../auto-reload.lua
 hotspot_check()
