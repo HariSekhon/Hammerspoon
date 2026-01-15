@@ -21,14 +21,19 @@
 -- luacheck: globals hs log notify alert get_disk_free_gb
 
 local check_interval_secs = 300
-local min_free_gb = 50
 local watch_path  = os.getenv("HOME")
-local warned = false
+
+-- thresholds in GB, highest first
+local thresholds_gb = {
+    100,
+    50,
+    20,
+}
+
+-- track which thresholds have already fired
+local warned = {}
 
 local function warn_if_disk_space_low()
-    if warned then
-        return
-    end
     local free_gb = get_disk_free_gb(watch_path)
 
     if not free_gb then
@@ -41,16 +46,18 @@ local function warn_if_disk_space_low()
         return
     end
 
-    if free_gb <= min_free_gb then
-        local msg= string.format(
-            "Free Disk Space %.2f GB <= %d GB",
-            free_gb,
-            min_free_gb
-        )
-        notify(msg)
-        alert(msg)
-        log(msg)
-        warned = true
+    for _, threshold in ipairs(thresholds_gb) do
+        if free_gb <= threshold and not warned[threshold] then
+            local msg = string.format(
+                "Free Disk Space %.2f GB <= %d GB",
+                free_gb,
+                threshold
+            )
+            notify(msg)
+            alert(msg)
+            log(msg)
+            warned[threshold] = true
+        end
     end
 end
 
