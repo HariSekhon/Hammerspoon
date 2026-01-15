@@ -103,4 +103,4 @@ wifiWatcher = hs.wifi.watcher.new(function()
 end)
 
 wifiWatcher:start()
-log("Wi-Fi watcher started")
+log("Watcher Started: Wi-Fi SpeedTest")
