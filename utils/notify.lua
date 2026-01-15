@@ -49,7 +49,9 @@ function notify(msg, title)
 end
 
 function alert(msg)
-    log(msg)
+    -- log in calling function instead
+    --log(msg)
+
     -- true = persists in the middle of the screen until Hammerspoon is quit or reloaded
     --hs.alert.show(msg, {}, true)
     hs.alert.show(msg, {}, 60)  -- 60 seconds
