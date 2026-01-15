@@ -48,11 +48,24 @@ function notify(msg, title)
     }):send()
 end
 
-function alert(msg)
+function alert(msg, title)
     -- log in calling function instead
     --log(msg)
 
     -- true = persists in the middle of the screen until Hammerspoon is quit or reloaded
     --hs.alert.show(msg, {}, true)
-    hs.alert.show(msg, {}, 60)  -- 60 seconds
+    --
+    -- this style of alert is prety disruptive - the one at the top right
+    -- which you can click to dismiss is the way to go instead
+    --hs.alert.show(msg, {}, 60)  -- 60 seconds
+
+    title = title or "Hammerspoon"
+
+    log(msg)
+
+    hs.notify.new({
+        title = title,
+        informativeText = msg,
+        withdrawAfter = 3600,
+    }):send()
 end
