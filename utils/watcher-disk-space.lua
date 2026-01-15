@@ -55,4 +55,4 @@ local function warn_if_disk_space_low()
 end
 
 hs.timer.doEvery(check_interval_secs, warn_if_disk_space_low)
-log "Disk Space Watcher Started"
+log "Watcher Started: Disk Space"
