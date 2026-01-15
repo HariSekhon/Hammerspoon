@@ -63,6 +63,7 @@ function alert(msg, title)
     hs.notify.new({
         title = title,
         informativeText = msg,
+        -- not respected by macOS which dismisses it after a few seconds anyway
         withdrawAfter = 3600,
     }):send()
 end
