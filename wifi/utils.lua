@@ -18,15 +18,20 @@
 --                              W i f i   U t i l s
 -- ========================================================================== --
 
-local function current_wifi_ssid()
+-- luacheck: globals hs
+
+local module = {}
+
+function module.current_wifi_ssid()
     local cmd = [[
-        networksetup -listnetworkserviceorder |
+        /usr/sbin/networksetup -listnetworkserviceorder |
         grep "Hardware.*Wi-Fi" |
         sed 's/.*: //;s/)$//' |
-        xargs networksetup -getairportnetwork 2>/dev/null
+        xargs /usr/sbin/networksetup -getairportnetwork 2>/dev/null
     ]]
 
     local output = hs.execute(cmd)
+    output = output:gsub("%s+$", "")
     if not output then
         return nil
     end
@@ -35,3 +40,5 @@ local function current_wifi_ssid()
     local ssid = output:match("Current Wi%-Fi Network:%s*(.+)")
     return ssid
 end
+
+return module
