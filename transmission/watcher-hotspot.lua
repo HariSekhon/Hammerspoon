@@ -17,61 +17,93 @@
 --       T r a n s m i s s i o n   H o t s p o t   Q u i t   W a t c h e r
 -- ========================================================================== --
 
--- luacheck: globals hs log notify quit_transmission
+-- luacheck: globals hs log notify quit_transmission current_wifi_ssid
+
+local wifi = require("wifi.utils")
 
 local hotspot_ssids = {
-  "iPhone",
-  "Android",
-  "Hotspot",
+    "iPhone",
+    "Android",
+    "Hotspot",
 }
 
 local on_hotspot = false
 
+-- required to trigger Location Services authorization pop-up - didn't work
+--hs.location.get()
+
 local function is_hotspot_wifi()
-  local ssid = hs.wifi.currentNetwork()
-  if not ssid then
-    return false
-  end
-
-  for _, name in ipairs(hotspot_ssids) do
-    if ssid:find(name) then
-      return true
+    -- always returns nil
+    --local ssid = hs.wifi.currentNetwork()
+    -- replace with custom function that uses networksetup to determine the wifi network name
+    local ssid = wifi.current_wifi_ssid()
+    --log("Wi-Fi SSID: " .. tostring(ssid))
+    if not ssid then
+        return false
     end
-  end
 
-  return false
+    for _, name in ipairs(hotspot_ssids) do
+        if ssid:lower():find(name:lower(), 1, true) then
+            return true
+        end
+    end
+
+    return false
 end
 
 local function is_hotspot_interface()
-  local output = hs.execute("route get default 2>/dev/null")
-  if not output then
-    return false
-  end
+    local output = hs.execute("route get default 2>/dev/null")
+    if not output then
+      return false
+    end
 
-  return output:find("bridge") or
-         output:find("Bluetooth") or
-         output:find("iPhone")
+    return output:find("bridge") or
+           output:find("Bluetooth") or
+           output:find("iPhone")
 end
 
 local function hotspot_check()
-  local hotspot = is_hotspot_wifi() or is_hotspot_interface()
+    local hotspot = is_hotspot_wifi() or is_hotspot_interface()
 
-  if hotspot and not on_hotspot then
-    on_hotspot = true
-    quit_transmission()
-    hs.notify.new({
-      title = "Hotspot detected",
-      informativeText = "Transmission quit to protect data usage",
-    }):send()
-  elseif not hotspot and on_hotspot then
-    on_hotspot = false
-  end
+    if hotspot and not on_hotspot then
+        on_hotspot = true
+        quit_transmission()
+        hs.notify.new({
+            title = "Hotspot detected",
+            informativeText = "Transmission quit to protect data usage",
+        }):send()
+    elseif not hotspot and on_hotspot then
+        on_hotspot = false
+    end
 end
 
-local reachability = hs.network.reachability.internet()
-reachability:setCallback(hotspot_check)
-reachability:start()
-log "Watcher Started: Transmission - Network Hotspot"
+local wifi_watcher = hs.wifi.watcher.new(function()
+    log "WiFi Watcher Fired"
+    hs.timer.doAfter(1, hotspot_check)
+end)
+
+wifi_watcher:start()
+log "Watcher Started: Transmission - WiFi Hotspot"
 
 -- run once at load just in case and to make immediately testing easier via ../auto-reload.lua
-hotspot_check()
+-- delayed initial detection still doesn't detect we're on a hotspot during reload
+--hs.timer.doAfter(2, function()
+--    log "Initial hotspot probe after reload"
+--    hotspot_check()
+--end)
+--
+local function initial_probe()
+    -- always returns nil
+    --local ssid = hs.wifi.currentNetwork()
+    -- replace with custom function that uses networksetup to determine the wifi network name
+    local ssid = wifi.current_wifi_ssid()
+    if ssid then
+        log("Initial SSID detected: " .. ssid)
+        hotspot_check()
+    else
+        --log "SSID not ready yet, retrying"
+        hs.timer.doAfter(1, initial_probe)
+    end
+end
+
+initial_probe()
