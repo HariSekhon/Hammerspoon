@@ -25,7 +25,7 @@ local module = {}
 function module.current_wifi_ssid()
     local cmd = [[
         /usr/sbin/networksetup -listnetworkserviceorder |
-        grep "Hardware.*Wi-Fi" |
+        grep -m1 "Hardware.*Wi-Fi" |
         sed 's/.*: //;s/)$//' |
         xargs /usr/sbin/networksetup -getairportnetwork 2>/dev/null
     ]]
