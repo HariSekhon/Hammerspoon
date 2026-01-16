@@ -98,7 +98,7 @@ local function initial_probe()
     -- replace with custom function that uses networksetup to determine the wifi network name
     local ssid = wifi.current_wifi_ssid()
     if ssid then
-        log("Initial SSID detected: " .. ssid)
+        log("Initial WiFi SSID detected: " .. ssid)
         hotspot_check()
     else
         --log "SSID not ready yet, retrying"
