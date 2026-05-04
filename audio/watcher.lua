@@ -74,6 +74,13 @@ hs.audiodevice.watcher.setCallback(function(_, _)
 
     log(string.format("Audio event: %s, state: %s", name, state))
 
+    local touchfile = hs.fs.pathToAbsolute("~/.config/no-audio-switching.touchfile")
+    local attr = hs.fs.attributes(touchfile)
+    if attr then
+        log(string.format("File '%s' present, skipping audio switching", touchfile))
+        return
+    end
+
     -- ===== AirPods / Headphones: automatic sequence =====
     if (name:match("AirPods") or
         name:match("Headphone"))
